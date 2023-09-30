@@ -39,9 +39,15 @@ Acessando o [Reposótrio do Nodejs](https://github.com/nodejs/node) é possível
 
 Portanto acessando o path [lib/internal/crypto/pbkdf2.js](https://github.com/nodejs/node/blob/main/lib/internal/crypto/pbkdf2.js) encontramos a definição do **pbkdf2** no lado do JavaScript.
 
-Debugando nota-se que dentro da função [pbkdf2](https://github.com/nodejs/node/blob/main/lib/internal/crypto/pbkdf2.js#L32) a variável **job** tem a tem a instância da classe **PBKDF2Job**, olhando as importações podemos ver que a classe [PBKDF2Job](https://github.com/nodejs/node/blob/main/lib/internal/crypto/pbkdf2.js#L10) vem da descontrução do **internalBinding('crypto')** e é dentro dele que o **hash** é calculado.
+Debugando nota-se que dentro da função [pbkdf2](https://github.com/nodejs/node/blob/main/lib/internal/crypto/pbkdf2.js#L32) a variável **job** tem a instância da classe **PBKDF2Job**, olhando as importações podemos ver que a classe [PBKDF2Job](https://github.com/nodejs/node/blob/main/lib/internal/crypto/pbkdf2.js#L10) vem da descontrução do **internalBinding('crypto')** e é dentro dele que o **hash** é calculado.
 
-### Hora de entender as informações:
+### O que é o internalBinding()?
+
+O internalBinding() também conhecido como process.binding(), tem como responsabilidade conectar as funções em JS com as em C++.
+
+### Mas como o "todo" funciona ?
+
+Identificamos que o fluxo é:
 
 ```mermaid
 graph TB
@@ -50,11 +56,7 @@ graph TB
     C ----> D[V8]
     D ----> E["NodeJS (no arquivo src)"]
     E ----> F[libuv]
-```
-
-* O arquivo lib representa o lado do JS.
-* O internalBinding() também conhecido como process.binding() é o responsável em conectar (fazer a pont) as funções em JS com as de C++.
-* 
+``` 
 
 
 
