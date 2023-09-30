@@ -9,7 +9,7 @@ Sabemos que dentro do Nodejs temos acessos há vários módulos/libs, por exempl
 
 Todos tem uma funcionaliade muito consistente e na maioria das vezes sempre representam uma funcionalidade do projeto libuv.
 
-### Como funciona na prática ?
+## Como funciona na prática ?
 
 Onde está implementada no código do Nodejs ?
 
@@ -30,7 +30,20 @@ graph TB
 
 Acessando o [Reposótrio do Nodejs](https://github.com/nodejs/node) é possível identificar as pastas **lib** e **src**:
 
-![](https://prnt.sc/2hTKxbU4wnzf)
+![](./Images//nodejs-repository.png)
+
+### Por que dar ênfase nelas?
+
+* A pasta lib contém todas as definições em JavaScript das funções e módulos que precisamos em nossos projetos (É o lado do Javascript).
+* Na past src está a implementações das funcionalidades que contem na pasta "lib" mas em C++.
+
+Portanto acessando o path [lib/internal/crypto/pbkdf2.js](https://github.com/nodejs/node/blob/main/lib/internal/crypto/pbkdf2.js) encontramos a definição do **pbkdf2** no lado do JavaScript.
+
+Debugando nota-se que dentro da função [pbkdf2](https://github.com/nodejs/node/blob/main/lib/internal/crypto/pbkdf2.js#L32) a variável **job** tem a tem a instância da classe **PBKDF2Job**, olhando as importações podemos ver que a classe [PBKDF2Job](https://github.com/nodejs/node/blob/main/lib/internal/crypto/pbkdf2.js#L10) vem da descontrução do **internalBinding('crypto')** e é dentro dele que o **hash** é calculado.
+
+
+
+
 
 
 
