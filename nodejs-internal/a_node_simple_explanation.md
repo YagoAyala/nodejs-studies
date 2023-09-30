@@ -48,8 +48,3 @@ Percebe-se que em baixo dos panos é usado bem mais C++ do que o próprio JS (Ja
 
 * [Nodejs GitHub](https://github.com/nodejs/node)
 * [Nodejs LearnWebsite](https://nodejs.dev/pt/learn/the-v8-javascript-engine/)
-
-
-
-
-
