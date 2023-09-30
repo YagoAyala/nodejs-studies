@@ -42,7 +42,12 @@ graph TB
 
 Percebe-se que em baixo dos panos é usado bem mais C++ do que o próprio JS (JavaScript), ai entra um dos propósitos do Nodejs:
 
-- Fornecer uma interface agradável para relacionar o JavaScript do nosso projeto com o C++ que roda em nosso computador que interpreta e executa o código em si.
+* Fornecer uma interface agradável para relacionar o JavaScript do nosso projeto com o C++ que roda em nosso computador que interpreta e executa o código em si.
+
+## Referências:
+
+* [Nodejs GitHub](https://github.com/nodejs/node)
+* [Nodejs LearnWebsite](https://nodejs.dev/pt/learn/the-v8-javascript-engine/)
 
 
 
