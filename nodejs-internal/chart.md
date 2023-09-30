@@ -1,7 +1,7 @@
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+graph TB
+    A[Javascript Code] ==> B[Node JS];
+    B ----> C[V8];
+    B ----> D[libuv];
+
 ```
