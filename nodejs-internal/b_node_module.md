@@ -80,9 +80,3 @@ Sua tarefa é lidar com tarefas de I/O (Input/Output - Entrada/Saída) assíncro
 * Loop de Eventos;
 * Cross-Platform;
 * Manipulação de Threads e Eventos;
-
-
-
-
-
-
