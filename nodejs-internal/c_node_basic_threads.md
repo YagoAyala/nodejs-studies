@@ -1,6 +1,5 @@
 # Nodejs Basic Threads:
 
-
 Quando é executado algo em nosso computador/servidor iniciamos um processo. 
 
 Processo é uma instância de um programa de computador que foi executado, em um único processo podemos ter várias Threads.
