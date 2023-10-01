@@ -11,7 +11,7 @@ graph TB
 
 ### Javascript Code:
 
-É o código que colocamos em arquivos Javascript e, eeventualmente, executamos.
+É o código que colocamos em arquivos Javascript e, eventualmente, executamos.
 
 ### NodeJS:
 
