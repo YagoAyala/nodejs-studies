@@ -16,18 +16,18 @@ const shouldContinue = () => {
 
 // Entire body executes in one "tick"
 while(shouldContinue()) {
-    // Node looks at pendingTimers and sees if any functions are ready to be called. (setTimeout, setInterval)
+    // 1- Node looks at pendingTimers and sees if any functions are ready to be called. (setTimeout, setInterval)
 
-    // Node looks at pendingOSTaks and pendingOperations and calls relevant callbacks.
+    // 2- Node looks at pendingOSTaks and pendingOperations and calls relevant callbacks.
 
-    // Pause execution. And just continue when:
+    // 3- Pause execution. And just continue when:
     // - a new pendingOSTask is done.
     // - a new pendingOperation is done.
     // - a timer is about to complete.
 
-    // Look at pendingTimers. (setImmediate).
+    // 4- Look at pendingTimers. (setImmediate).
 
-    // Handle any 'close' events (Nodejs Steams).
+    // 5- Handle any 'close' events (Nodejs Streams).
 }
 
 // exit back to terminal

@@ -32,3 +32,23 @@ Caso uma delas esteja pendente o Event Loop irá fazer mais **ticks**.
 Código ilustrativo de como Event Loop é desenvolvido:
 
 ![](./Images/eventloop-example.png)
+
+### O que ocorre em um tick ?
+
+O tick se baseia em 5 etapas:
+
+1- Node procura se tem algum timer pendente e se tem algum callback pronto para ser chamado (setTimeout, setInterval).
+
+2- Node olha as OS tasks e operações pendentes e se tem algum callback para ser chamado.
+
+3- Node para a execução e só continua quando:
+
+* Um OS task que estava pendente termina.
+
+* Uma operação que estava pendente termina.
+
+* Um timer está quase completo.
+
+4- Node verifica se tem algum timer pendente (setImmediate).
+
+5- Node lida com qualquer 'close' de eventos (Nodejs Streams).
