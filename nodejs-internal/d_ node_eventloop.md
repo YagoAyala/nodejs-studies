@@ -41,7 +41,7 @@ O tick se baseia em 5 etapas:
 
 2- Node olha as OS tasks e operações pendentes e se tem algum callback para ser chamado.
 
-3- Node para a execução e só continua quando:
+3- Node para a execução e só continua quando: (Nesse meio tempo o garbage collector entra em ação)
 
 * Um OS task que estava pendente termina.
 
@@ -49,6 +49,8 @@ O tick se baseia em 5 etapas:
 
 * Um timer está quase completo.
 
-4- Node verifica se tem algum timer pendente (setImmediate).
+4- Fase de Poll (Poll Phase): Durante esta fase, o Node.js aguarda eventos, como I/O, que estão agendados para serem executados. Se houver callbacks ou operações I/O prontas para serem executadas, elas são processadas nesta fase.
 
-5- Node lida com qualquer 'close' de eventos (Nodejs Streams).
+5- Node verifica se tem algum timer pendente (setImmediate).
+
+6- Node lida com qualquer 'close' de eventos (Nodejs Streams).
